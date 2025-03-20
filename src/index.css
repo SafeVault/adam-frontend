@@ -1,0 +1,20 @@
+@import "tailwindcss";
+
+@layer base {
+  *,
+  *::after,
+  *::before {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    @apply font-sans;
+  }
+}
+
+:root {
+  --primary: #800080;
+  --spacing: 4px;
+  --adam-black-100: #0d0d0d;
+  /* PUT all variables here including fonts (if variable style is used) and colors. 
+  Do NOT override default tailwind colors. Colors gotten from the figma design should be prepended with an "adam"  */
+}
