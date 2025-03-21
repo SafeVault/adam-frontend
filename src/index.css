@@ -10,7 +10,16 @@
 
 /* Example, you define the custom color you want here and then call like this "bg-adam-black-100" */
 @theme {
-  --color-adam-black-100: #800080;
+  --color-adam-black-50: #191919;
+  --color-adam-white-50: #D9D9D9;
+  --color-adam-red-50: #FF000026;
+  --color-adam-red-100: #FF0000;
+  --color-adam-green-50:#00A51E26;
+  --color-adam-green-100:#00A51E;
+  --color-adam-yellow-50: #FFD90026;
+  --color-adam-yellow-100: #FFD900;
+  --color-adam-blue-100: #0900FF;
+  --color-adam-purple-100:#800080;
   --font-display: "Mansfield", "sans-serif";
 }
 
