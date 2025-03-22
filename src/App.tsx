@@ -1,7 +1,12 @@
 import "./App.css";
+import DashboardLayout from "./layouts/DashboardLayout";
 
 function App() {
-  return <div className=" bg-adam-yellow-50">Work begins here</div>;
+  return (
+    <DashboardLayout>
+      <div className=" bg-adam-yellow-50 h-full p-4">Work begins here</div>
+    </DashboardLayout>
+  )
 }
 
 export default App;
