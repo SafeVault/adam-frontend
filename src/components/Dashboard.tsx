@@ -14,7 +14,7 @@ import { transactions } from "@/constants";
 export default function Dashboard() {
   const [activeTab, setActiveTab] = useState("weekly");
   return (
-    <div className="custom-bg min-h-screen p-5 ">
+    <div className="p-5 ">
       <p className="font-medium text-[30px] text-white mb-3">
         👋🏽 Hey Designking!
       </p>

@@ -1,7 +1,8 @@
+import WalletButton from "../ui/walletbutton";
 function Topbar() {
     return (
-      <header className="bg-adam-red-50 p-4">
-        Topbar
+      <header className="p-5 flex justify-end">
+        <WalletButton />
       </header>
     );
 }
