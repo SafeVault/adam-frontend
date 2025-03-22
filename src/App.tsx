@@ -1,7 +1,12 @@
 import "./App.css";
+import Signup from "./components/Signup";
 
 function App() {
-  return <div className=" bg-adam-yellow-50">Work begins here</div>;
+  return (
+    <div>
+      <Signup />
+    </div>
+  );
 }
 
 export default App;
