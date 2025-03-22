@@ -18,19 +18,19 @@ const Charts = () => {
                     const chart = context.chart;
                     const { ctx, chartArea } = chart;
 
-                    if (!chartArea) return false; // Return false if chart is not ready
+                    if (!chartArea) return false;
 
                     const gradient = ctx.createLinearGradient(0, chartArea.top, 0, chartArea.bottom);
-                    gradient.addColorStop(0, '#800080'); // Purple at the top
-                    gradient.addColorStop(1, 'rgba(26, 0, 26, 0)'); // Fade to transparent
+                    gradient.addColorStop(0, '#800080'); 
+                    gradient.addColorStop(1, 'rgba(26, 0, 26, 0)'); 
 
                     return {
                         target: 'origin',
-                        above: gradient, // Apply the gradient above the origin
+                        above: gradient, 
                         below: 'transparent',
                     };
                 },
-                pointStyle: false, // Set a valid value or remove it
+                pointStyle: false, 
             },
         ],
     };
@@ -40,21 +40,21 @@ const Charts = () => {
         maintainAspectRatio: false,
         scales: {
             x: {
-                type: "category", // ✅ Explicitly set scale type
+                type: "category", 
                 grid: { display: false },
                 ticks: {
                     color: "#8d8585",
                     padding: 10,
                     font: {
                         size: 13,
-                        weight: "bold", // ✅ Use valid weight value
-                        family: "Mansfield, sans-serif", // ✅ Use a common font
+                        weight: "bold", 
+                        family: "Mansfield, sans-serif", 
                     },
                 },
                 border: { display: true, color: "#8d8585", width: 2 },
             },
             y: {
-                type: "linear", // ✅ Explicitly set scale type
+                type: "linear", 
                 grid: { display: false },
                 border: { display: true, color: "#8d8585", width: 2 },
                 min: 5000,
@@ -63,7 +63,7 @@ const Charts = () => {
                     color: "#8d8585",
                     font: {
                         size: 13,
-                        weight: "bold", // ✅ Use valid weight value
+                        weight: "bold", 
                         family: "Mansfield, sans-serif",
                     },
                     stepSize: 15000,
@@ -79,7 +79,7 @@ const Charts = () => {
             tooltip: {
                 callbacks: {
                     label: (tooltipItem: TooltipItem<"line">) => {
-                        const value = tooltipItem.raw as number; // ✅ Ensure 'raw' is a number
+                        const value = tooltipItem.raw as number; 
                         return `$${value.toLocaleString()}`;
                     },
                 },
