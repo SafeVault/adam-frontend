@@ -67,9 +67,11 @@ const Signup = () => {
           />
         </div>
         <h1 className="text-3xl font-semibold text-center pt-7 mb-2">
-          Get Started
+          Welcome Back
         </h1>
-        <p className="text-center text-gray-400 mb-6">Let's get you started</p>
+        <p className="text-center text-gray-400 mb-6">
+          Let's get you logged in
+        </p>
         <form>
           <div className="mb-4">
             <input
@@ -78,7 +80,7 @@ const Signup = () => {
               placeholder="Enter your email"
             />
           </div>
-          <div className="mb-4 relative">
+          <div className=" relative flex items-center">
             <input
               type={showPassword ? "text" : "password"} // Toggle input type
               className="w-full p-3 border border-gray-600 rounded-xl bg-transparent text-white focus:outline-none focus:border-purple-500"
@@ -91,6 +93,9 @@ const Signup = () => {
               {showPassword ? <FaEyeSlash /> : <FaEye />}
             </div>
           </div>
+          <a href="#" className="text-purple-500 text-right ml-auto block mb-4">
+            Forgot Password?
+          </a>
           <button
             className="w-full p-3 bg-gradient-to-r from-purple-900 to-pink-900 rounded-xl text-white font-semibold"
             type="submit"
