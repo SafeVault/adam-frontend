@@ -57,14 +57,14 @@ const mockTransactions: Transaction[] = [
 export const TransactionHistory = () => {
   const [transactions] = useState<Transaction[]>(mockTransactions);
 
-  // Custom copy icon matching the design
+  // Custom copy icon matching the design with deep grey color
   const CopyIcon = () => (
     <svg 
       width="16" 
       height="16" 
       viewBox="0 0 24 24" 
       fill="none" 
-      stroke="currentColor" 
+      stroke="#666666"
       strokeWidth="2" 
       className="ml-1 cursor-pointer"
     >
@@ -91,15 +91,17 @@ export const TransactionHistory = () => {
         </div>
         
         {/* Filters and search */}
-        <div className="flex flex-wrap justify-between gap-3 mb-8">
+        <div className="flex items-center flex-wrap gap-3 mb-8">
           <div className="relative">
-            <div className="absolute inset-y-0 left-3 flex items-center pointer-events-none">
-              <Search className="h-4 w-4 text-gray-400" />
+            <div className="absolute inset-y-0 left-0 flex items-center">
+              <div className="flex items-center h-full pl-3 pr-2 border-r border-gray-700">
+                <Search className="h-4 w-4 text-gray-400" />
+              </div>
             </div>
             <input
               type="text"
               placeholder="Search transaction"
-              className="w-[280px] pl-10 pr-4 py-2 bg-[#1E1E1E] border border-gray-700 rounded text-white text-sm focus:outline-none"
+              className="w-[280px] pl-12 pr-4 py-2 bg-[#1E1E1E] border border-gray-700 rounded text-white text-sm focus:outline-none"
             />
           </div>
           
@@ -156,14 +158,14 @@ export const TransactionHistory = () => {
                     {transaction.amount}
                   </TableCell>
                   <TableCell className="py-4">
-                    <div className="flex items-center text-[#4B99FF]">
-                      {transaction.from}
+                    <div className="flex items-center">
+                      <span className="text-[#0900FF]">{transaction.from}</span>
                       <CopyIcon />
                     </div>
                   </TableCell>
                   <TableCell className="py-4">
-                    <div className="flex items-center text-[#4B99FF]">
-                      {transaction.to}
+                    <div className="flex items-center">
+                      <span className="text-[#0900FF]">{transaction.to}</span>
                       <CopyIcon />
                     </div>
                   </TableCell>
