@@ -9,7 +9,7 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
-import { transactions } from "@/constants";
+import { transactions, truncAddress } from "@/constants";
 
 function App() {
   const [activeTab, setActiveTab] = useState("weekly");
@@ -193,7 +193,7 @@ function App() {
                       <TableCell>{trx.date}</TableCell>
                       <TableCell> {trx.amount}</TableCell>
                       <TableCell className="text-adam-blue-100 ">
-                        <span> {trx.from}</span>{" "}
+                        <span> {truncAddress(trx.from)}</span>{" "}
                         {/* <img
                           src="/copy.svg"
                           alt="copy logo"
@@ -201,7 +201,7 @@ function App() {
                         /> */}
                       </TableCell>{" "}
                       <TableCell className="text-adam-blue-100">
-                        {trx.to}
+                        {truncAddress(trx.to)}
                       </TableCell>{" "}
                       <TableCell className="">{trx.department}</TableCell>{" "}
                       <TableCell
