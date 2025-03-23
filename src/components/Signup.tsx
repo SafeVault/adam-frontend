@@ -6,7 +6,7 @@ import smallbox from "../assets/smallbox.png"; // Import the smallbox image
 const Signup = () => {
   return (
     <div
-      className="bg-gray-900 min-h-screen w-full flex justify-center items-center relative overflow-hidden"
+      className="bg-black min-h-screen w-full flex justify-center items-center relative overflow-hidden"
       style={{
         backgroundImage: `url(${bgImage}), url(${bottomGradient})`, // Set the overlay and bottom gradient images
         backgroundSize: "cover, 100% auto", // Ensure the overlay covers the div and the gradient spans the width
@@ -55,21 +55,21 @@ const Signup = () => {
         <form>
           <div className="mb-4">
             <input
-              className="w-full p-3 border border-gray-600 rounded bg-transparent text-white focus:outline-none focus:border-purple-500"
+              className="w-full p-3 border border-gray-600 rounded-xl bg-transparent text-white focus:outline-none focus:border-purple-500"
               placeholder="Enter your email"
               type="email"
             />
           </div>
           <div className="mb-4 relative">
             <input
-              className="w-full p-3 border border-gray-600 rounded bg-transparent text-white focus:outline-none focus:border-purple-500"
+              className="w-full p-3 border border-gray-600 rounded-xl bg-transparent text-white focus:outline-none focus:border-purple-500"
               placeholder="Enter your password"
               type="password"
             />
             <i className="fas fa-eye absolute right-3 top-3 text-gray-400"></i>
           </div>
           <button
-            className="w-full p-3 bg-gradient-to-r from-purple-500 to-pink-500 rounded text-white font-semibold"
+            className="w-full p-3 bg-gradient-to-r from-purple-900 to-pink-900 rounded-xl text-white font-semibold"
             type="submit"
           >
             Sign up
@@ -80,7 +80,7 @@ const Signup = () => {
           <span className="mx-2 text-gray-400">or</span>
           <hr className="flex-grow border-gray-600" />
         </div>
-        <button className="w-full p-3 border border-gray-600 rounded flex items-center justify-center text-white">
+        <button className="w-full p-3 border border-gray-600 rounded-lg flex items-center justify-center text-white">
           <img
             alt="Google logo"
             className="w-5 h-5 mr-2"
@@ -90,7 +90,7 @@ const Signup = () => {
         </button>
         <p className="text-center text-gray-400 mt-6">
           Already have an account?
-          <a className="text-white font-semibold" href="#">
+          <a className="text-white font-semibold ml-2" href="#">
             Login
           </a>
         </p>
