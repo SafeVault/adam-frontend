@@ -79,9 +79,9 @@ export const TransactionHistory = () => {
       <div className="w-[172px] bg-[#1A1A1A] hidden md:block"></div>
       
       {/* Main content */}
-      <div className="flex-1 px-8 py-6">
-        <div className="flex justify-between items-center mb-6">
-          <h1 className="text-[28px] font-bold text-white">Transaction History</h1>
+      <div className="flex-1 px-4 sm:px-6 md:px-8 py-6">
+        <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 sm:gap-0 mb-6">
+          <h1 className="text-[24px] sm:text-[28px] font-bold text-white">Transaction History</h1>
           
           {/* User info */}
           <div className="flex items-center bg-purple-900 text-white text-sm px-3 py-1.5 rounded-md">
@@ -91,8 +91,8 @@ export const TransactionHistory = () => {
         </div>
         
         {/* Filters and search */}
-        <div className="flex items-center flex-wrap gap-3 mb-8">
-          <div className="relative">
+        <div className="flex flex-col sm:flex-row items-stretch sm:items-center flex-wrap gap-3 mb-8">
+          <div className="relative w-full sm:w-auto">
             <div className="absolute inset-y-0 left-0 flex items-center">
               <div className="flex items-center h-full pl-3 pr-2 border-r border-gray-700">
                 <Search className="h-4 w-4 text-gray-400" />
@@ -101,7 +101,7 @@ export const TransactionHistory = () => {
             <input
               type="text"
               placeholder="Search transaction"
-              className="w-[280px] pl-12 pr-4 py-2 bg-[#1E1E1E] border border-gray-700 rounded text-white text-sm focus:outline-none"
+              className="w-full sm:w-[280px] pl-12 pr-4 py-2 bg-[#1E1E1E] border border-gray-700 rounded text-white text-sm focus:outline-none"
             />
           </div>
           
@@ -130,16 +130,16 @@ export const TransactionHistory = () => {
         
         {/* Transaction Table */}
         <div className="w-full overflow-x-auto">
-          <Table>
-            <TableHeader>
+          <Table className="border border-gray-800 min-w-[900px]">
+            <TableHeader className="bg-[#222222]">
               <TableRow className="border-b border-gray-800">
-                <TableHead className="text-gray-400 font-normal py-4 text-left pl-0 pr-6">Type</TableHead>
-                <TableHead className="text-gray-400 font-normal py-4 text-left pr-6">Date</TableHead>
-                <TableHead className="text-gray-400 font-normal py-4 text-left pr-6">Amount</TableHead>
-                <TableHead className="text-gray-400 font-normal py-4 text-left pr-6">From</TableHead>
-                <TableHead className="text-gray-400 font-normal py-4 text-left pr-6">To</TableHead>
-                <TableHead className="text-gray-400 font-normal py-4 text-left pr-6">Department</TableHead>
-                <TableHead className="text-gray-400 font-normal py-4 text-left">Status</TableHead>
+                <TableHead className="text-white font-normal py-4 text-left pl-6 pr-6">Type</TableHead>
+                <TableHead className="text-white font-normal py-4 text-left pr-6">Date</TableHead>
+                <TableHead className="text-white font-normal py-4 text-left pr-6">Amount</TableHead>
+                <TableHead className="text-white font-normal py-4 text-left pr-6">From</TableHead>
+                <TableHead className="text-white font-normal py-4 text-left pr-6">To</TableHead>
+                <TableHead className="text-white font-normal py-4 text-left pr-6">Department</TableHead>
+                <TableHead className="text-white font-normal py-4 text-left">Status</TableHead>
               </TableRow>
             </TableHeader>
             <TableBody>
@@ -148,7 +148,7 @@ export const TransactionHistory = () => {
                   key={transaction.id}
                   className="border-b border-gray-800/70 hover:bg-[#222222] transition-colors"
                 >
-                  <TableCell className={`py-4 pl-0 ${transaction.type === 'Deposit' ? 'text-green-500' : 'text-red-500'}`}>
+                  <TableCell className={`py-4 pl-6 ${transaction.type === 'Deposit' ? 'text-green-500' : 'text-red-500'}`}>
                     {transaction.type}
                   </TableCell>
                   <TableCell className="py-4 text-white">
