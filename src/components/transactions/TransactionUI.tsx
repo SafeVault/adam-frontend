@@ -9,12 +9,12 @@ interface TransactionUIProps {
 }
 
 export const TransactionUI = ({ transactions, className = '' }: TransactionUIProps) => {
-  const [isMobile, setIsMobile] = useState(false);
+  const [viewMode, setViewMode] = useState<'table' | 'card'>('table');
   const [selectedTransaction, setSelectedTransaction] = useState<Transaction | null>(null);
 
-  // Function to handle window resize and update mobile state
+  // Function to handle window resize and update view mode
   const handleResize = () => {
-    setIsMobile(window.innerWidth < 768); // 768px is the md breakpoint in Tailwind
+    setViewMode(window.innerWidth < 640 ? 'card' : 'table'); // 640px is the sm breakpoint in Tailwind
   };
 
   // Set up resize listener
@@ -40,19 +40,28 @@ export const TransactionUI = ({ transactions, className = '' }: TransactionUIPro
 
   return (
     <div className={`container mx-auto px-4 py-6 ${className}`}>
-      <h1 className="text-3xl font-bold mb-6">Transactions</h1>
+      <div className="flex justify-between items-center mb-6">
+        <h1 className="text-3xl font-bold">Transactions</h1>
+        <div className="sm:hidden">
+          <button
+            onClick={() => setViewMode(viewMode === 'table' ? 'card' : 'table')}
+            className="px-4 py-2 bg-adam-black-50 text-adam-white-50 rounded-lg text-sm"
+          >
+            {viewMode === 'table' ? 'Switch to Cards' : 'Switch to Table'}
+          </button>
+        </div>
+      </div>
       
-      {/* Desktop view - Table */}
-      <div className={`${isMobile ? 'hidden' : 'block'}`}>
+      {/* Table view */}
+      <div className={viewMode === 'table' ? 'block' : 'hidden'}>
         <TransactionList 
           transactions={transactions} 
           onRowClick={handleTransactionSelect}
         />
       </div>
       
-      {/* Mobile view - Cards */}
-      <div className={`${isMobile ? 'block' : 'hidden'}`}>
-        <h2 className="text-2xl font-bold mb-4">Recent Transactions</h2>
+      {/* Card view */}
+      <div className={viewMode === 'card' ? 'block' : 'hidden'}>
         {transactions.map(transaction => (
           <TransactionCard
             key={transaction.id}

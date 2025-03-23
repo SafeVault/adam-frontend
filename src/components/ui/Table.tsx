@@ -6,6 +6,7 @@ export interface Column<T> {
   render?: (item: T) => ReactNode;
   width?: string;
   className?: string;
+  minWidth?: string;
 }
 
 interface TableProps<T> {
@@ -24,15 +25,18 @@ export function Table<T>({
   idKey = 'id' as keyof T,
 }: TableProps<T>) {
   return (
-    <div className="w-full overflow-x-auto">
-      <table className={`w-full border-collapse ${className}`}>
+    <div className="w-full overflow-x-auto border rounded-lg">
+      <table className={`w-full min-w-[800px] border-collapse ${className}`}>
         <thead>
           <tr className="bg-adam-black-50 text-adam-white-50">
             {columns.map((column) => (
               <th
                 key={column.key}
-                className={`p-4 text-left ${column.className || ''}`}
-                style={{ width: column.width }}
+                className={`p-4 text-left whitespace-nowrap ${column.className || ''}`}
+                style={{ 
+                  width: column.width,
+                  minWidth: column.minWidth || '100px'
+                }}
               >
                 {column.header}
               </th>
@@ -61,7 +65,10 @@ export function Table<T>({
                 {columns.map((column) => (
                   <td
                     key={`${item[idKey] as string || index}-${column.key}`}
-                    className={`p-4 ${column.className || ''}`}
+                    className={`p-4 whitespace-nowrap ${column.className || ''}`}
+                    style={{
+                      minWidth: column.minWidth || '100px'
+                    }}
                   >
                     {column.render ? column.render(item) : (item as any)[column.key]}
                   </td>

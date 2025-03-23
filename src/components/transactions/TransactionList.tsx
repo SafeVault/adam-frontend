@@ -19,11 +19,13 @@ export const TransactionList = ({
       key: 'date',
       header: 'Date',
       render: (transaction) => formatDate(transaction.date),
+      minWidth: '180px',
     },
     {
       key: 'description',
       header: 'Description',
       className: 'max-w-xs truncate',
+      minWidth: '200px',
     },
     {
       key: 'amount',
@@ -34,17 +36,19 @@ export const TransactionList = ({
         </span>
       ),
       className: 'text-right',
+      minWidth: '150px',
     },
     {
       key: 'status',
       header: 'Status',
       render: (transaction) => <StatusBadge status={transaction.status} />,
       className: 'text-center',
+      minWidth: '120px',
     },
     {
       key: 'category',
       header: 'Category',
-      className: 'hidden md:table-cell', // Hide on mobile, show on medium screens and up
+      minWidth: '150px',
     },
   ];
 
