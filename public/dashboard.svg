@@ -1,0 +1,50 @@
+<svg width="1440" height="1024" viewBox="0 0 1440 1024" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g clip-path="url(#clip0_105_2)">
+<rect width="1440" height="1024" fill="#0D0D0D"/>
+<line x1="1440" y1="928.5" y2="928.5" stroke="white" stroke-opacity="0.03"/>
+<line x1="1440" y1="824.5" y2="824.5" stroke="white" stroke-opacity="0.03"/>
+<line x1="1440" y1="720.5" y2="720.5" stroke="white" stroke-opacity="0.03"/>
+<line x1="1440" y1="616.5" y2="616.5" stroke="white" stroke-opacity="0.03"/>
+<line x1="1440" y1="512.5" y2="512.5" stroke="white" stroke-opacity="0.03"/>
+<line x1="1440" y1="408.5" y2="408.5" stroke="white" stroke-opacity="0.03"/>
+<line x1="1440" y1="304.5" y2="304.5" stroke="white" stroke-opacity="0.03"/>
+<line x1="1440" y1="200.5" y2="200.5" stroke="white" stroke-opacity="0.03"/>
+<line x1="1440" y1="96.5" y2="96.5" stroke="white" stroke-opacity="0.03"/>
+<line x1="95.5" y1="1024" x2="95.5" stroke="white" stroke-opacity="0.03"/>
+<line x1="199.5" y1="1024" x2="199.5" stroke="white" stroke-opacity="0.03"/>
+<line x1="303.5" y1="1024" x2="303.5" stroke="white" stroke-opacity="0.03"/>
+<line x1="407.5" y1="1024" x2="407.5" stroke="white" stroke-opacity="0.03"/>
+<line x1="511.5" y1="1024" x2="511.5" stroke="white" stroke-opacity="0.03"/>
+<line x1="615.5" y1="1024" x2="615.5" stroke="white" stroke-opacity="0.03"/>
+<line x1="719.5" y1="1024" x2="719.5" stroke="white" stroke-opacity="0.03"/>
+<line x1="823.5" y1="1024" x2="823.5" stroke="white" stroke-opacity="0.03"/>
+<line x1="927.5" y1="1024" x2="927.5" stroke="white" stroke-opacity="0.03"/>
+<line x1="1031.5" y1="1024" x2="1031.5" stroke="white" stroke-opacity="0.03"/>
+<line x1="1135.5" y1="1024" x2="1135.5" stroke="white" stroke-opacity="0.03"/>
+<line x1="1239.5" y1="1024" x2="1239.5" stroke="white" stroke-opacity="0.03"/>
+<line x1="1343.5" y1="1024" x2="1343.5" stroke="white" stroke-opacity="0.03"/>
+<rect x="96" y="96" width="104" height="104" fill="white" fill-opacity="0.03"/>
+<rect x="96.5" y="96.5" width="103" height="103" stroke="white" stroke-opacity="0.03"/>
+<rect x="1136" y="200" width="104" height="104" fill="white" fill-opacity="0.03"/>
+<rect x="1136.5" y="200.5" width="103" height="103" stroke="white" stroke-opacity="0.03"/>
+<rect x="1032" y="824" width="104" height="104" fill="white" fill-opacity="0.03"/>
+<rect x="1032.5" y="824.5" width="103" height="103" stroke="white" stroke-opacity="0.03"/>
+<rect x="824" y="-8" width="104" height="104" fill="white" fill-opacity="0.03"/>
+<rect x="824.5" y="-7.5" width="103" height="103" stroke="white" stroke-opacity="0.03"/>
+<rect x="1344" y="-8" width="104" height="104" fill="white" fill-opacity="0.03"/>
+<rect x="1344.5" y="-7.5" width="103" height="103" stroke="white" stroke-opacity="0.03"/>
+<g filter="url(#filter0_f_105_2)">
+<path d="M687 124.5C711 132 1082 147 1145 138L1443.5 108C1451 79 1461.5 27.9 1443.5 55.5C1425.5 83.1 1283 102 1214 108H1082C1067 108 1034 108 968 115.5C902 123 859.5 108 829.5 108H705C685.5 95.5 632.4 67.5 576 55.5C505.5 40.5 523.5 21 469.5 -8.99998C415.5 -39 429 -25.5 370.5 -37.5C312 -49.5 273 -57 256.5 -51C243.3 -46.2 229 -21 223.5 -8.99998L273 10.5C314 18.5 405.3 36.9 442.5 46.5C489 58.5 484.5 64.5 532.5 87C580.5 109.5 663 117 687 124.5Z" fill="white" fill-opacity="0.3"/>
+</g>
+</g>
+<defs>
+<filter id="filter0_f_105_2" x="23.5" y="-253.112" width="1629.94" height="593.902" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+<feGaussianBlur stdDeviation="100" result="effect1_foregroundBlur_105_2"/>
+</filter>
+<clipPath id="clip0_105_2">
+<rect width="1440" height="1024" fill="white"/>
+</clipPath>
+</defs>
+</svg>
