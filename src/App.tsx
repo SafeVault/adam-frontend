@@ -1,7 +1,12 @@
 import "./App.css";
+import Employee from "./pages/Employee";
 
 function App() {
-  return <div>Work begins here</div>;
+  return (
+    <div>
+      <Employee />
+    </div>
+  );
 }
 
 export default App;
