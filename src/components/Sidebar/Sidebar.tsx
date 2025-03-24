@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 import SidebarItem from "../ui/sidebaritem";
 import DropDownMenu from "../ui/dropdownmenu";
 
@@ -85,15 +84,3 @@ function Sidebar() {
 }
 
 export default Sidebar;
-=======
-function Sidebar() {
-    return (
-      <aside className="bg-adam-blue-100 p-4 h-full">
-        Sidebar
-      </aside>
-    );
-}
-  
-export default Sidebar;
-  
->>>>>>> 155cb634d05f741882e343d29d06c0c264bdc3f3

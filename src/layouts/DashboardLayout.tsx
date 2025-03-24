@@ -5,7 +5,7 @@ import { Outlet } from 'react-router-dom';
 
 function DashboardLayout() {
   return (
-    <section className='h-full grid grid-cols-12 custom-bg'>
+    <section className=' grid grid-cols-12 custom-bg'>
       <div className="hidden md:block md:col-span-2">
         <Sidebar />
       </div>
