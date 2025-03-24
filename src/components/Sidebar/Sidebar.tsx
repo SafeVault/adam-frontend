@@ -16,7 +16,7 @@ function Sidebar() {
       icon: payrollIcon,
       unavailable: false,
       subItems: [
-        { title: "Expenses", url: "/" },
+        { title: "Expenses", url: "/payroll" },
         { title: "Employees", url: "/" },
       ]
     },

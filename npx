@@ -1,0 +1,6 @@
+The 'shadcn-ui' package is deprecated. Please use the 'shadcn' package instead:
+
+  npx shadcn@latest add table shadcn@latest add input shadcn@latest add button shadcn@latest add select shadcn@latest add card shadcn@latest add badge shadcn@latest add switch
+
+For more information, visit: https://ui.shadcn.com/docs/cli
+
