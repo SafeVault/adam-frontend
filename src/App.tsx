@@ -2,6 +2,7 @@ import { TransactionUI } from "./components/transactions/TransactionUI";
 import { mockTransactions } from "./data/mockTransactions";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom"
 import "./App.css";
+import DashboardLayout from "./layouts/DashboardLayout";
 import Dashboard from "./components/Dashboard";
 import SignupPage from "./components/SignupPage";
 import { TransactionHistory } from "./components/transactions/TransactionHistory";
