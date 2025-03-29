@@ -10,10 +10,23 @@ import {
 } from "@/components/ui/table";
 import { truncAddress } from "@/helpers";
 import { transactions } from "@/constants";
+import { Link } from "react-router-dom";
 
 export default function Dashboard() {
   const [activeTab, setActiveTab] = useState("weekly");
   return (
+    // <div className="custom-bg min-h-screen p-5 ">
+    //   <div className="flex justify-between items-center mb-3">
+    //     <p className="font-medium text-[30px] text-white">
+    //       👋🏽 Hey Designking!
+    //     </p>
+    //     <Link 
+    //       to="/transactions" 
+    //       className="px-4 py-2 bg-purple-600 hover:bg-purple-700 text-white rounded-md transition-colors"
+    //     >
+    //       View Transactions
+    //     </Link>
+    //   </div>
     <div className="p-5 ">
       <p className="font-medium text-[30px] text-white mb-3">
         👋🏽 Hey Designking!
