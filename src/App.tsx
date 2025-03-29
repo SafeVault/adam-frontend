@@ -3,6 +3,7 @@ import "./App.css";
 import DashboardLayout from "./layouts/DashboardLayout";
 import Dashboard from "./components/Dashboard";
 import SignupPage from "./components/SignupPage";
+import ResetPasswordPage from "./components/ResetPasswordPage";
 
 function App() {
   return <div></div>;
@@ -10,6 +11,7 @@ function App() {
     <Router>
       <Routes>
         <Route path="/signup" element={<SignupPage />} />
+        <Route path="/reset-password" element={<ResetPasswordPage />} />
         <Route element={<DashboardLayout />}>
           <Route path="/dashboard" element={<Dashboard />} />
         </Route>
