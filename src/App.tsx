@@ -11,12 +11,15 @@ function App() {
 import DashboardLayout from "./layouts/DashboardLayout";
 import Dashboard from "./components/Dashboard";
 import SignupPage from "./components/SignupPage";
+import ResetPasswordPage from "./components/ResetPasswordPage";
 
 function App() {
+  return <div></div>;
   return (
     <Router>
       <Routes>
         <Route path="/signup" element={<SignupPage />} />
+        <Route path="/reset-password" element={<ResetPasswordPage />} />
         <Route element={<DashboardLayout />}>
           <Route path="/dashboard" element={<Dashboard />} />
         </Route>
