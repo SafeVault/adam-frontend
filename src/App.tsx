@@ -5,6 +5,7 @@ import Dashboard from "./components/Dashboard";
 import SignupPage from "./components/SignupPage";
 
 function App() {
+  return <div></div>;
   return (
     <Router>
       <Routes>
