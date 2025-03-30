@@ -7,9 +7,32 @@ import Header from "../components/Header";
 import Add from "../assets/add.png";
 import Import from "../assets/import.png";
 import CustomButton from "../components/CustomButton";
+import { IoClose } from "react-icons/io5"; 
 
 export default function EmployeeDashboard() {
   const [search, setSearch] = useState("");
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [modalStep, setModalStep] = useState(1);
+
+  const handleNext = () => {
+    if (modalStep === 1) setModalStep(2); // From Employee Details to Payment Details
+    else if (modalStep === 2) setModalStep(3); // From Payment Details to Confirmation
+  };
+
+  const handleBack = () => {
+    if (modalStep === 2) setModalStep(1); 
+    else if (modalStep === 3) setModalStep(2); 
+  };
+
+  const handleClose = () => {
+    setIsModalOpen(false);
+    setModalStep(1); 
+  };
+
+  const handleFinalSubmit = () => {
+    console.log("Employee data submitted!");
+    handleClose(); // Close modal after submission
+  };
 
   return (
     <div className="flex md:flex-row h-screen bg-black text-white">
@@ -27,7 +50,10 @@ export default function EmployeeDashboard() {
               <img src={Import} alt="Import" className="w-4 h-4" />
               Import CSV
             </button>
-            <button className="bg-black border-white/30 border px-4 py-2 gap-2 rounded flex items-center text-sm">
+            <button
+              className="bg-black border-white/30 border px-4 py-2 gap-2 rounded flex items-center text-sm"
+              onClick={() => setIsModalOpen(true)} // Open modal
+            >
               <img src={Add} alt="Add" className="w-4 h-4" />
               Add Employee
             </button>
@@ -51,6 +77,7 @@ export default function EmployeeDashboard() {
           </div>
         </div>
 
+        {/* Table */}
         <div className="bg-black mt-4 rounded-lg overflow-x-auto">
           <table className="w-full text-left min-w-[600px]">
             <thead>
@@ -89,6 +116,148 @@ export default function EmployeeDashboard() {
           </table>
         </div>
       </div>
+
+      {/* Modal */}
+      {isModalOpen && (
+        <div className="fixed inset-0 flex items-center justify-center bg-black/10 backdrop-blur-sm">
+          <div className="bg-[#111] text-white border border-white/20 rounded-lg p-6 w-[90%] md:w-[400px] relative">
+            <button
+              className="absolute top-4 right-4 text-white text-xl"
+              onClick={handleClose} // Close modal
+            >
+              <IoClose />
+            </button>
+
+            {/* Step 1: Employee Details */}
+            {modalStep === 1 && (
+              <>
+                <h2 className="text-center text-lg font-semibold mb-4">
+                  Employee Details
+                </h2>
+                <div className="flex flex-col gap-4 h-full">
+                  <input
+                    type="text"
+                    placeholder="Employee's name"
+                    className="bg-[#191919] text-white p-3 rounded-lg border border-white/20 focus:outline-none w-full"
+                  />
+                  <input
+                    type="email"
+                    placeholder="Email address"
+                    className="bg-[#191919] text-white p-3 rounded-lg border border-white/20 focus:outline-none w-full"
+                  />
+                  <div className="flex-grow"></div>
+                  <div className="flex justify-end">
+                    <button
+                      className="w-[80px] h-[40px] bg-gradient-to-r from-purple-600 to-purple-800 text-white font-medium rounded-lg hover:opacity-80 transition-all duration-300"
+                      onClick={handleNext} // Move to Payment Details
+                    >
+                      Next
+                    </button>
+                  </div>
+                </div>
+              </>
+            )}
+
+            {/* Step 2: Payment Details */}
+            {modalStep === 2 && (
+              <>
+                <h2 className="text-center text-lg font-semibold mb-4">
+                  Payment Details
+                </h2>
+                <div className="flex flex-col gap-4 h-full">
+                  <div className="w-[433px] flex mb-4">
+                    <button className="w-[172.5px] h-[40px] bg-gray-500 text-white border border-white/20 focus:outline-none">
+                      Crypto
+                    </button>
+                    <button className="w-[172.5px] h-[40px] bg-black-200 text-white border border-white/20 focus:outline-none opacity-50">
+                      FIAT <span className="text-xs text-gray-400 bg-[#800080]">(Coming soon)</span>
+                    </button>
+                  </div>
+                  <div className="relative">
+                    <select
+                      className="w-full h-[40px] bg-[#191919] text-white rounded-lg border border-white/20 focus:outline-none appearance-none p-3"
+                    >
+                      <option value="starknet">Starknet</option>
+                    </select>
+                    <div className="absolute inset-y-0 right-0 flex items-center px-2 pointer-events-none">
+                      <svg
+                        className="w-4 h-4 text-white"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth="2"
+                          d="M19 9l-7 7-7-7"
+                        />
+                      </svg>
+                    </div>
+                  </div>
+                  <input
+                    type="text"
+                    placeholder="Employee's wallet address"
+                    className="bg-[#191919] text-white p-3 rounded-lg border border-white/20 focus:outline-none w-full"
+                  />
+                  <div className="flex-grow"></div>
+                  <div className="flex justify-between">
+                    <button
+                      className="w-[80px] h-[40px] bg-transparent border border-white/20 text-white font-medium rounded-lg hover:bg-white/10 transition-all duration-300"
+                      onClick={handleBack} 
+                    >
+                      Back
+                    </button>
+                    <button
+                      className="w-[80px] h-[40px] bg-gradient-to-r from-purple-600 to-purple-800 text-white font-medium rounded-lg hover:opacity-80 transition-all duration-300"
+                      onClick={handleNext}
+                    >
+                      Next
+                    </button>
+                  </div>
+                </div>
+              </>
+            )}
+
+            {/* Step 3: Confirmation */}
+            {modalStep === 3 && (
+              <>
+                <h2 className="text-center text-lg font-semibold mb-4">
+                  More details
+                </h2>
+                <div className="flex flex-col gap-4 h-full">
+                  <input
+                    type="text"
+                    placeholder="Employee's job title"
+                    className="bg-[#191919] text-white p-3 rounded-lg border border-white/20 focus:outline-none w-full"
+                  />
+                  <input
+                    type="email"
+                    placeholder="employee's department"
+                    className="bg-[#191919] text-white p-3 rounded-lg border border-white/20 focus:outline-none w-full"
+                  />
+                  <div className="flex-grow"></div>
+                  <div className="flex justify-between">
+                    <button
+                      className="w-[80px] h-[40px] bg-transparent border border-white/20 text-white font-medium rounded-lg hover:bg-white/10 transition-all duration-300"
+                      onClick={handleBack}
+                    >
+                      Back
+                    </button>
+                    <button
+                      className="w-[80px] h-[40px] bg-gradient-to-r from-purple-600 to-purple-800 text-white font-medium rounded-lg hover:opacity-80 transition-all duration-300"
+                      onClick={handleFinalSubmit} // Save and close
+                    >
+                      Save
+                    </button>
+                  </div>
+                </div>
+              </>
+            )}
+          </div>
+        </div>
+      )}
     </div>
   );
 }
