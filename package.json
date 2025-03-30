@@ -10,7 +10,15 @@
     "preview": "vite preview"
   },
   "dependencies": {
+ featResponsive-Employee-UI
     "@tailwindcss/vite": "^4.0.14",
+
+    "@tailwindcss/postcss": "^4.0.15",
+    "@types/uuid": "^10.0.0",
+    "uuid": "^11.1.0",
+    "chart.js": "^4.4.8",
+    "class-variance-authority": "^0.7.1",
+ main
     "clsx": "^2.1.1",
     "lucide-react": "^0.485.0",
     "react": "^19.0.0",
@@ -31,6 +39,11 @@
     "eslint-plugin-react-hooks": "^5.1.0",
     "eslint-plugin-react-refresh": "^0.4.19",
     "globals": "^15.15.0",
+ featResponsive-Employee-UI
+
+    "postcss": "^8.5.3",
+    "tailwindcss": "^3.3.5",
+ main
     "typescript": "~5.7.2",
     "typescript-eslint": "^8.24.1",
     "vite": "^6.2.0"
