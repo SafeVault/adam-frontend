@@ -1,6 +1,7 @@
-import React, { useState } from "react";
+import React, { useEffect } from "react";
 import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { cn } from "@/lib/utils";
+import { usePayrollContext } from "@/lib/contexts/PayrollContext";
 
 interface StatCardProps {
   title: string;
@@ -36,7 +37,7 @@ const StatCard: React.FC<StatCardProps> = ({
 };
 
 export default function PayrollStats() {
-  const [activeTab, setActiveTab] = useState("all");
+  const { activeTabId, activeTabTitle, setActiveTab } = usePayrollContext();
 
   const stats = [
     { id: "all", title: "All", count: 34, total: "total employees" },
@@ -57,19 +58,39 @@ export default function PayrollStats() {
     { id: "void", title: "Void", count: 1, total: "total employees" },
   ];
 
+  // Log the context value whenever it changes
+  useEffect(() => {
+    console.log("Context changed:", { activeTabId, activeTabTitle });
+  }, [activeTabId, activeTabTitle]);
+
+  const handleTabChange = (id: string) => {
+    // Find the selected stat object to get its title
+    const selectedStat = stats.find(stat => stat.id === id);
+    if (selectedStat) {
+      console.log("Changing tab to:", id, selectedStat.title);
+      setActiveTab(id, selectedStat.title);
+    }
+  };
+
+  // Add explicit click handler for desktop card view
+  const handleCardClick = (id: string) => {
+    console.log("Card clicked:", id);
+    handleTabChange(id);
+  };
+
   return (
     <>
       {/* Desktop View - Horizontal Cards */}
-      <div className="hidden md:flex w-full ">
+      <div className="hidden md:flex w-full">
         {stats.map((stat) => (
           <StatCard
             key={stat.id}
             title={stat.title}
             total={`${stat.count} ${stat.total}`}
-            active={activeTab === stat.id}
-            onClick={() => setActiveTab(stat.id)}
+            active={activeTabId === stat.id}
+            onClick={() => handleCardClick(stat.id)}
             className={`${
-              activeTab === stat.id
+              activeTabId === stat.id
                 ? "text-white bg-gradient-to-r from-[#800080]/40 to-[#ffffff]/20"
                 : "text-gray-400"
             } flex-1 h-[70px] mb-5`}
@@ -82,11 +103,14 @@ export default function PayrollStats() {
       <div className="md:hidden mb-5 max-w-screen overflow-hidden">
         <Tabs
           defaultValue="all"
-          value={activeTab}
-          onValueChange={setActiveTab}
+          value={activeTabId}
+          onValueChange={(value) => {
+            console.log("Tab value changed:", value);
+            handleTabChange(value);
+          }}
           className="w-full"
         >
-          <TabsList className="bg-transparent  w-full justify-start h-auto p-0 overflow-x-auto flex-nowrap whitespace-nowrap">
+          <TabsList className="bg-transparent w-full justify-start h-auto p-0 overflow-x-auto flex-nowrap whitespace-nowrap">
             {stats.map((stat) => (
               <TabsTrigger
                 key={stat.id}
@@ -99,7 +123,7 @@ export default function PayrollStats() {
                 )}
               >
                 {stat.title}
-                {activeTab === stat.id && (
+                {activeTabId === stat.id && (
                   <div className="absolute bottom-0 left-0 w-full h-0.5 bg-adam-purple-100"></div>
                 )}
               </TabsTrigger>
