@@ -7,7 +7,10 @@ import Employee from "./pages/Employee";
 import DashboardLayout from "./layouts/DashboardLayout";
 import Dashboard from "./components/Dashboard";
 import SignupPage from "./components/SignupPage";
+
+import Payroll from "./pages/Payroll";
 import ResetPasswordPage from "./components/ResetPasswordPage";
+
 
 import Dashboard from "./components/Dashboard";
 import SignupPage from "./components/SignupPage";
@@ -23,6 +26,7 @@ function App() {
         <Route path="/reset-password" element={<ResetPasswordPage />} />
         <Route element={<DashboardLayout />}>
           <Route path="/dashboard" element={<Dashboard />} />
+          <Route path="/payroll" element={<Payroll/>} />
         </Route>
         <Route path="/employee" element={<Employee />} />
 
